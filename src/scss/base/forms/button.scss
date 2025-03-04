@@ -1,0 +1,70 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+	display: inline-flex;
+	padding: 29px 50px;
+	border-radius: toRem(4);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: toRem(24);
+	font-weight: 700;
+	letter-spacing: toRem(.96);
+	line-height: 1.5;
+	/* 36/24 */
+	text-transform: uppercase;
+	color: $bgColorBlack;
+	border: toRem(1) solid transparent;
+	background-color: $whiteColor;
+
+	@media (max-width:$tablet) {
+		padding: toRem(25) toRem(45);
+		font-size: toRem(22);
+	}
+
+	@media (max-width:$mobile) {
+		padding: toRem(20) toRem(40);
+		font-size: toRem(20);
+	}
+
+	@media (max-width:$mobileSmall) {
+		padding: toRem(16) toRem(32);
+		font-size: toRem(18);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			border-color: $primaryColor;
+			color: $whiteColor;
+			background-color: $lightPrimaryColor;
+			transition: all ease-in 0.4s 0s;
+		}
+	}
+
+	&--ftr {
+		padding-inline: toRem(52);
+		padding-block: toRem(27);
+		border: toRem(1) solid transparent;
+		font-size: toRem(20);
+		font-style: italic;
+		font-weight: 400;
+		letter-spacing: toRem(0.8);
+		line-height: normal;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $primaryColor;
+			}
+		}
+
+		@media (max-width:$mobile) {
+			padding-block: toRem(20);
+			padding-inline: toRem(30);
+		}
+	}
+
+	&--fw {
+		width: 100%;
+	}
+}

@@ -1,0 +1,76 @@
+.header {
+  position: fixed;
+  inline-size: 100%;
+  z-index: 4;
+  padding-block: toRem(30);
+
+  @media (min-width:toEm(1261)) and (max-width: toEm(1540)) {
+    background-color: $whiteColor;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width:$mobile) {
+    background-color: #d9c2e5;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    padding-block: toRem(15);
+  }
+
+  &._header-scroll {
+    position: fixed;
+    inset-block-start: -200%;
+  }
+
+  &._header-show {
+    transition: inset-block-start 0.3s ease 0s;
+    inset-block-start: 0;
+    padding-block: toRem(15);
+    background-color: $whiteColor;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width:$mobile) {
+    padding-block: toRem(15);
+  }
+
+  // .header__container
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(100);
+
+    @media (max-width:$tablet) {
+      column-gap: toRem(60);
+    }
+
+    @media (max-width:$mobile) {
+      justify-content: space-between;
+    }
+  }
+
+  // .header__logo
+  &__logo {
+    inline-size: toRem(256);
+    flex: 0 0 toRem(256);
+    aspect-ratio: 256 / 58;
+    position: relative;
+    z-index: 5;
+
+    @media (max-width:$mobile) {
+      inline-size: toRem(76);
+      flex: 0 0 toRem(76);
+      aspect-ratio: 76 / 38;
+    }
+
+    img {
+      inline-size: 100%;
+      aspect-ratio: 256 / 58;
+
+      @media (max-width:$mobile) {
+        aspect-ratio: 76 / 38;
+      }
+    }
+  }
+
+  // .header__menu
+  &__menu {}
+}
